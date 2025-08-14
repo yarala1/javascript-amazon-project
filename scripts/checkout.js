@@ -22,6 +22,24 @@ cart.forEach((cartItem) => {
     }
   });
 
+  const deliveryOptionsID = cartItem.deliveryOptionsID;
+
+  let deliveryOption;
+
+  deliveryOptions.forEach((option) => {
+    if (option.id === deliveryOptionsID){
+      deliveryOption = option;
+    }
+  });
+
+  const today = dayjs();
+    const deliveryDate = today.add(
+      deliveryOption.deliveryDays,
+      'days'
+  );
+  const dateString = deliveryDate.format(
+    'dddd, MMMM D'
+  );
  
   cartSummaryHTML += `
  <div class="order-summary">
