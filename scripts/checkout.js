@@ -8,7 +8,7 @@ import {deliveryOptions} from '../data/deliveryOptions.js';
 hello();
 const today = dayjs();
 const deliveryDate = today.add(7, 'days');
-console.log(deliveryDate.format('dddd, MMMM D'));
+deliveryDate.format('dddd, MMMM D');
 let cartSummaryHTML = '';
 
 cart.forEach((cartItem) => {
@@ -33,10 +33,7 @@ cart.forEach((cartItem) => {
   });
 
   const today = dayjs();
-    const deliveryDate = today.add(
-      deliveryOption.deliveryDays,
-      'days'
-  );
+    const deliveryDate = today.add(deliveryOptions.deliveryDays,'days');
   const dateString = deliveryDate.format(
     'dddd, MMMM D'
   );
