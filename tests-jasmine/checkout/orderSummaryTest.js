@@ -29,6 +29,10 @@ describe('test suit: renderOrderSummary', () => {
     renderOrderSummary();
 });
 
+  afterEach(() => {
+  
+  });  
+
   it('displays the cart', () => {
     expect(
       document.querySelectorAll('.js-cart-item-container').length
