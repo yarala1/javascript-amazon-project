@@ -63,6 +63,6 @@ const paymentSummaryHTML = `
     </button>
 `;
 
-document.querySelector('.payment-summary')
+document.querySelector('.js-payment-summary')
 .innerHTML = paymentSummaryHTML;
 }
