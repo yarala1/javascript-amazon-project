@@ -34,6 +34,10 @@ class Product{
   getPrice(){
     return `$${formatCurrency(this.priceCents)}`;
   }
+
+  extraInfoHtml(){
+    return '';
+  }
 }
 
 export const products = [
@@ -696,6 +700,9 @@ export const products = [
     ]
   }
 ].map((productDetails) => {
+  if(productDetails.type === 'clothing'){
+    return new Clothing(productDetails);
+  }
   return new Product(productDetails);
 });
 
