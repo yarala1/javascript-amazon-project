@@ -101,9 +101,14 @@ export function loadProductsFetch(){
   });
 
   console.log('load products');
+  
+  }).catch((error) => {
+    console.log('An error occurred');
   });
-  return promise;
+  return promise; 
 }
+loadProductsFetch();
+
 /*
 loadProductsFetsh().then(() => {
   console.log('next step');
@@ -125,10 +130,13 @@ export function loadProducts(fun){
   fun();
 });
 
-  xhr.open('GET', 'https://supersimplebackend.dev/products');
-  xhr.send();
-};
+xhr.addEventListener('error', (error) => {
+  console.log('An error occurred');
+}); 
 
+  xhr.open('GET', 'https://supersimplebackend.dev/products');
+  xhr.send();   
+};
 
 
 /*
